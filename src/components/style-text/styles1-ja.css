@@ -1,0 +1,32 @@
+/**
+ * 左のマークダウンは良く見えません。
+ *
+ * 私たちは少し修正を加えました。
+ */
+
+#work-text {
+  max-height: 94.5%;
+}
+
+#work-text.flipped {
+  -webkit-transform: rotateX(0deg) rotateY(190deg) rotateZ(180deg);
+}
+
+#work-text .md {
+  -webkit-transform: rotateY(190deg) rotateZ(180deg);
+  margin-top: 1200px;
+}
+
+/**
+ * 奇跡を目撃する瞬間があります：
+ *
+ * 3。
+ * 2。
+ * 1。
+ *
+ * 。
+ * 私はあなたに嘘をついた、私は知らない〜
+ *
+ * さて、実際には、来る。
+ *
+ */

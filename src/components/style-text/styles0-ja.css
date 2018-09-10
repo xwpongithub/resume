@@ -1,0 +1,107 @@
+/**
+ *
+ * こんにちは。 私の名前はXiao Wenpengです。 現在、昆明でフロントエンドの開発エンジニアとして働いており
+ * スポーツとプログラミングを愛する人です。
+ *
+ * 面白いフロントエンドのやりとりを勉強したい。
+ *
+ * ライブ放送コードを書きたいですか？
+ */
+
+/**
+ * だから始めよう、すべてが最初に動くようにする〜
+ */
+
+* {
+  -webkit-transition: all 1s;
+}
+
+/**
+ * これは役に立たないようですが、しばらくの間は効果が見えますので心配しないでください。
+ *
+ * 黒と白の配色があまりにも退屈なので、いくつかの変更を加えましょう。
+ */
+
+html {
+  background: rgb(63, 82, 99);
+}
+
+/***
+ * 等等。
+ */
+
+pre, a {
+  color: white;
+}
+
+/**
+ * はるかに良く見えます。 しかしそれはちょっと目が眩しいです。
+ *
+ * 画面全体にコードを書くのはスペースの無駄です。
+ *
+ * いくつかの最適化をさせてください。
+ */
+
+pre:not(:empty) {
+  overflow: auto;
+  background: rgb(48, 48, 48);
+  border: 1px solid #ccc;
+  max-height: 44.6%;
+  width: 49%;
+  font-size: 14px;
+  font-family: monospace;
+  padding: 10px 10px 20px;
+  box-shadow: -4px 4px 2px 0 rgba(0,0,0,0.3);
+  white-space: pre-wrap;
+  outline: 0;
+}
+
+/**
+ * 次に、画面の右側に移動します。
+ */
+
+#style-text {
+  -webkit-transform: translateX(95%);
+  position: absolute;
+}
+
+/**
+ * それはかなり良いようだが、すべてのフォントの色は白です！
+ *
+ * コードをより読みやすくしましょう〜
+ */
+
+.comment       { color: #857F6B; font-style: italic; }
+.selector      { color: #E69F0F; }
+.selector .key { color: #64D5EA; }
+.key           { color: #64D5EA; }
+.value         { color: #BE84F2; }
+.value.px      { color: #F92772; }
+
+/**
+ * 今我々はいくつかの進歩がある。
+ *
+ * そしてそれをもっとしっかりとしてください。
+ */
+
+body {
+  -webkit-perspective: 1000px;
+}
+
+#style-text {
+  -webkit-transform: translateX(98.5%) rotateY(-10deg);
+  -webkit-transform-origin: right;
+  max-height: 94.5%;
+}
+
+/**
+ * さて、それはほとんどなくなりました、私について話しましょう。
+ *
+ * 私はあなたが私だけを見に来るべきではないと信じています。
+ */
+
+pre:not(#style-text) {
+  -webkit-transform: rotateY(10deg);
+  -webkit-transform-origin: left;
+}
+
