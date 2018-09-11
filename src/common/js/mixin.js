@@ -19,7 +19,6 @@ export const writeMixin = {
   },
   methods: {
     async writeTo(el, message, index, interval, mirrorToStyle, charsPerInterval) {
-      console.log(message)
       if (this.$root.animationSkipped) {
         throw new Error('SKIP IT')
       }

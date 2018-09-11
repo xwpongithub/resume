@@ -1,8 +1,8 @@
 <template>
   <pre id="work-text" :class="workCls" v-show="show">
     <div v-if="preview" v-html="text"></div><div v-else>
-      <div class="text" v-html="workText"></div>
-      <div class="md" v-html="mdText"></div>
+      <div ref="text" class="text" v-html="workText"></div>
+      <div ref="md" class="md" v-html="mdText"></div>
     </div>
   </pre>
 </template>
@@ -12,28 +12,22 @@
   import Promise from 'bluebird'
   import Markdown from 'markdown'
   import wheel from 'mouse-wheel'
-  import {getLanguage} from '../../common/js/util'
 
   const toHTML = Markdown.markdown.toHTML
-
-  let workText = ''
-
-  if (getLanguage() === 'ja') {
-    workText = require('./work-ja.txt')
-  } else if (getLanguage() === 'zh') {
-    workText = require('./work-zh.txt')
-  }
 
   export default {
     name: 'work-text',
     mixins: [writeMixin],
+    props: {
+      sourceText: String
+    },
     data() {
       return {
         flipped: false,
         preview: true,
         show: false,
-        workText: workText,
-        mdText: toHTML(workText)
+        workText: this.sourceText,
+        mdText: toHTML(this.sourceText)
       }
     },
     computed: {
@@ -44,7 +38,7 @@
     methods: {
       async write() {
         this.show = true
-        await this.writeTo(this.$el, workText, 0, this.speed, false, 1)
+        await this.writeTo(this.$el, this.workText, 0, this.speed, false, 1)
       },
       showWorkBox() {
         this.show = true
@@ -71,6 +65,12 @@
             this.$el.scrollTop += (dy * (this.flipped ? -1 : 1))
           }.bind(this), true)
         })
+      }
+    },
+    watch: {
+      sourceText(val) {
+        this.workText = val
+        this.mdText = toHTML(val)
       }
     }
   }
